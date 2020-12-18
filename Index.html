@@ -6,7 +6,7 @@
     <link rel="icon" href="Files/Logos/eTourism1.png" type="image/png">
     <link rel="stylesheet" href="Styles.css">
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
 <body>
@@ -22,7 +22,6 @@
                 <ul id="List">
                     <li><a href="Location/Giza-Pyramids.html">Giza Pyramids</a></li>
             </div>
-
         </div>
     </section>
 </body>
@@ -37,7 +36,6 @@
         ul = document.getElementById("List");
         li = ul.getElementsByTagName("li");
         x = document.getElementById("search").value;
-        // Declare variables
         if (x.length == 0) {
             ul.style.display = "none";
         } else {
@@ -45,7 +43,6 @@
             searchlocation();
         }
 
-        // Loop through all list items, and hide those who don't match the search query
         function searchlocation() {
             for (i = 0; i < li.length; i++) {
                 a = li[i].getElementsByTagName("a")[0];
