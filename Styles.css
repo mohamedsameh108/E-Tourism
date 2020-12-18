@@ -4,10 +4,12 @@
 }
 html,body{
     width: 100%;
+    height: 100%;
 }
 
 .header {
     width: 100%;
+    height: 100%;
     background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(Files/Backgrounds/home.png);
     background-size: cover;
     background-position: center;
