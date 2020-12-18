@@ -3,12 +3,10 @@
     margin: 0px;
 }
 html,body{
-    height: 100%;
     width: 100%;
 }
 
 .header {
-    height: 100%;
     width: 100%;
     background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(Files/Backgrounds/home.png);
     background-size: cover;
