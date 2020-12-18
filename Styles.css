@@ -9,11 +9,6 @@ html {
     height: 100%;
 }
 
-@viewport {
-    width: device-width;
-    zoom: 1;
-}
-
 
 .header {
     background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(Files/Backgrounds/home.png);
