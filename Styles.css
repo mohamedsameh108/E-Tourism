@@ -2,10 +2,18 @@
     padding: 0px;
     margin: 0px;
 }
-body,html{
+
+body,
+html {
     height: 100%;
     width: 100%;
 }
+
+@viewport {
+    width: device-width;
+    zoom: 1;
+}
+
 
 .header {
     height: 100%;
