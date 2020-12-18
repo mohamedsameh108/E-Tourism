@@ -1,0 +1,74 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+body,
+html {
+    height: 100%;
+}
+
+.header {
+    height: 100%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(Files/Backgrounds/home.png);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    padding: 20px;
+    text-align: center;
+    color: white;
+}
+
+.header img {
+    width: 80px;
+    float: left;
+}
+
+.header #first {
+    padding-top: 260px;
+    padding-bottom: 0px;
+    font-size: 55px;
+}
+
+.header #second {
+    margin: 18px, 0px;
+    font-size: 20px;
+}
+
+.search-group {
+    width: 500px;
+    max-width: 500px;
+    border-radius: 30px;
+    background: white;
+    margin: auto;
+    padding: 2px;
+}
+
+.form-control {
+    border: 0,  !important;
+    border-radius: 30px !important;
+    margin: 2px;
+    box-shadow: none !important;
+}
+
+.search-group-append {
+    width: 500px;
+    border: 0 !important;
+    color: black !important;
+    padding: 0 25px !important;
+    border-radius: 30px !important;
+    box-shadow: none !important;
+    font-size: 24px !important;
+}
+
+.search-group-append ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+
+}
+
+.search-group-append li a {
+    color: black;
+}

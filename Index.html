@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>E-Tourism</title>
+    <link rel="icon" href="Files/Logos/eTourism1.png" type="image/png">
+    <link rel="stylesheet" href="Styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+
+<body>
+    <section class="header">
+        <div class="container">
+            <img src="Files/Logos/eTourism1.png">
+        </div>
+        <h1 id="first">Visit EGYPT</h1>
+        <h1 id="second">From Your Home</h1>
+        <div class="search-group">
+            <input type="text" id="search" class="form-control" onkeyup="myFunction()" placeholder="Search">
+            <div class="search-group-append">
+                <ul id="List">
+                    <li><a href="Location/Giza-Pyramids.html">Giza Pyramids</a></li>
+            </div>
+
+        </div>
+    </section>
+</body>
+<script>
+    const z = document.getElementById("List");
+    z.style.display = "none";
+
+    function myFunction() {
+        var input, filter, ul, li, a, i, txtValue, x;
+        input = document.getElementById("search");
+        filter = input.value.toUpperCase();
+        ul = document.getElementById("List");
+        li = ul.getElementsByTagName("li");
+        x = document.getElementById("search").value;
+        // Declare variables
+        if (x.length == 0) {
+            ul.style.display = "none";
+        } else {
+            ul.style.display = "block"
+            searchlocation();
+        }
+
+        // Loop through all list items, and hide those who don't match the search query
+        function searchlocation() {
+            for (i = 0; i < li.length; i++) {
+                a = li[i].getElementsByTagName("a")[0];
+                txtValue = a.textContent || a.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    li[i].style.display = "";
+                } else {
+                    li[i].style.display = "none";
+                }
+            }
+        }
+    }
+</script>
+
+</html>
