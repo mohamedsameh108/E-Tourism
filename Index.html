@@ -4,10 +4,115 @@
 <head>
     <title>E-Tourism</title>
     <link rel="icon" href="Files/Logos/eTourism1.png" type="image/png">
-    <link rel="stylesheet" href="Styles.css">
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+        }
+
+        body,
+        html {
+            width: 100%;
+            height: 100%;
+        }
+
+
+        .header {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(Files/Backgrounds/home.png);
+            width: 100%;
+            height: 100%;
+            background-size: 100% 100%;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            padding: 20px;
+            text-align: center;
+            color: white;
+        }
+
+        .header img {
+            width: 80px;
+            float: left;
+        }
+
+        .header #first {
+            padding-top: 260px;
+            padding-bottom: 0px;
+            font-size: 55px;
+            position: relative;
+        }
+
+        .header #second {
+            margin: 18px, 0px;
+            font-size: 20px;
+            position: relative;
+        }
+
+        #myInput {
+            font-size: 16px;
+            width: 500px;
+            padding: 12px 20px 12px 40px;
+            margin-bottom: 12px;
+            border-radius: 30px;
+            margin: auto;
+            position: relative;
+        }
+
+        .form-control {
+            border: 0 !important;
+            border-radius: 30px !important;
+            margin: 2px;
+            width: 500px;
+            padding: 12px 20px 12px 40px;
+            box-shadow: none !important;
+            position: relative;
+        }
+
+
+        .scroll::-webkit-scrollbar {
+            display: none;
+        }
+
+        .scroll {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        .scroll {
+            position: relative;
+            border-collapse: collapse;
+            width: 500px;
+            height: 150px;
+            font-size: 18px;
+            margin: auto;
+            overflow: auto;
+        }
+
+        #myTable th,
+        #myTable td {
+            text-align: left;
+            padding: 12px;
+        }
+
+        #myTable tr {
+            border-bottom: 1px solid #ddd;
+        }
+
+        #myTable tr.header,
+        #myTable tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        #myTable a {
+            text-decoration: none;
+            color: white;
+        }
+    </style>
     <meta charset="UTF-8">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+    </script>
 </head>
 
 <body>
@@ -17,45 +122,59 @@
         </div>
         <h1 id="first">Visit EGYPT</h1>
         <h1 id="second">From Your Home</h1>
-        <div class="search-group">
-            <input type="text" id="search" class="form-control" onkeyup="myFunction()" placeholder="Search">
-            <div class="search-group-append">
-                <ul id="List">
-                    <li><a href="Location/Giza-Pyramids.html">Giza Pyramids</a></li>
-            </div>
+        <input type="text" id="myInput" class="form-control" placeholder="Search">
+        <div class="scroll">
+            <table id="myTable">
+                <tr>
+                    <th>Sight</th>
+                    <th>City</th>
+                    <th>Type</th>
+                    <th>Go</th>
+                </tr>
+                <tbody id="geeks">
+                    <tr>
+                        <td>Giza Pyramids</td>
+                        <td>Giza</td>
+                        <td>Pyramid</td>
+                        <td><a href="https://otourism.co/giza-pyramids">Visit</a></td>
+                    </tr>
+                    <tr>
+                        <td>DSA Foundation</td>
+                        <td>7999</td>
+                        <td>Regular Classes</td>
+                        <td><a href="https://otourism.co/giza-pyramids">Visit</a></td>
+                    </tr>
+                    <tr>
+                        <td>Geeks Classes</td>
+                        <td>10799</td>
+                        <td>Weekend Classes</td>
+                        <td><a href="https://otourism.co/giza-pyramids">Visit</a></td>
+                    </tr>
+                    <tr>
+                        <td>Placement 100</td>
+                        <td>9999</td>
+                        <td>Online Classes</td>
+                        <td><a href="https://otourism.co/giza-pyramids">Visit</a></td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </section>
 </body>
 <script>
-    const z = document.getElementById("List");
-    z.style.display = "none";
-
-    function myFunction() {
-        var input, filter, ul, li, a, i, txtValue, x;
-        input = document.getElementById("search");
-        filter = input.value.toUpperCase();
-        ul = document.getElementById("List");
-        li = ul.getElementsByTagName("li");
-        x = document.getElementById("search").value;
-        if (x.length == 0) {
-            ul.style.display = "none";
-        } else {
-            ul.style.display = "block"
-            searchlocation();
-        }
-
-        function searchlocation() {
-            for (i = 0; i < li.length; i++) {
-                a = li[i].getElementsByTagName("a")[0];
-                txtValue = a.textContent || a.innerText;
-                if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                    li[i].style.display = "";
-                } else {
-                    li[i].style.display = "none";
-                }
-            }
-        }
-    }
+    if ($("#myInput").length > 0) {
+        $("#myInput").on("keyup", function () {
+            $("#myTable").show();
+            var value = $(this).val().toLowerCase();
+            $("#geeks tr").filter(function () {
+                $(this).toggle($(this).text()
+                    .toLowerCase().indexOf(value) > -1)
+            });
+        });
+    };
+    $(document).ready(function () {
+        $("#myTable").hide();
+    });
 </script>
 
 </html>
